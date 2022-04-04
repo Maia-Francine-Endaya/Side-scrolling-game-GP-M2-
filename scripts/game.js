@@ -160,6 +160,7 @@ function collectCoin(player, coins) {
 //Function of ending the game when goal is reached
 function winFunction(player, goal) {
   this.physics.pause();
+  player.setTint
   player.anims.play('turn');
   win = true;
 }
