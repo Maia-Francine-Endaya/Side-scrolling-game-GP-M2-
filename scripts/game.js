@@ -29,6 +29,7 @@ var score = 0;
 var scoreText;
 var coinsCollected = 0;
 var collectedText;
+var winText;
 
 var win;
 
@@ -162,6 +163,10 @@ function winFunction(player, goal) {
   this.physics.pause();
 
   goal.disableBody(true, true);
+
+  //Win Text
+  winText = this.add.text(600, 300, 'YOU WIN!', { fontSize: '100px', fill: '#000' });
+
   player.setTint(0xffd000);
   player.anims.play('turn');
   win = true;
