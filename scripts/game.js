@@ -39,10 +39,10 @@ var gameOver;
 
 function preload() {
   this.load.image('background', './assets/images/Background-Placeholder.PNG');
-  this.load.image('ground', './assets/images/platform.png');
+  this.load.image('ground', './assets/images/Platform.PNG');
   this.load.image('coin', './assets/images/Coin.PNG');
   this.load.image('goal', './assets/images/Goal.PNG');
-  this.load.image('hazard', './assets/images/Hazard-Placeholder.PNG')
+  this.load.image('hazard', './assets/images/Hazard.PNG')
   this.load.spritesheet('dude',
     './assets/images/dude.png', { frameWidth: 32, frameHeight: 48 })
 };
@@ -120,13 +120,13 @@ function create() {
   //Hazards
   hazards = this.physics.add.staticGroup();
 
-  hazards.create(300, 558, 'hazard');
-  hazards.create(425, 558, 'hazard');
-  hazards.create(473, 558, 'hazard');
+  hazards.create(300, 568, 'hazard');
+  hazards.create(425, 568, 'hazard');
+  hazards.create(473, 568, 'hazard');
 
-  hazards.create(1630, 558, 'hazard');
-  hazards.create(1680, 558, 'hazard');
-  hazards.create(1730, 558, 'hazard');
+  hazards.create(1630, 568, 'hazard');
+  hazards.create(1680, 568, 'hazard');
+  hazards.create(1730, 568, 'hazard');
 
   //Cursors
   cursors = this.input.keyboard.createCursorKeys();
@@ -183,7 +183,7 @@ function winFunction(player, goal) {
   //Win Text
   winText = this.add.text(600, 300, 'YOU WIN!', { fontSize: '100px', fill: '#000' });
 
-  player.setTint(0xffd000);
+  player.setTint(0xffb608);
   player.anims.play('turn');
   win = true;
 }
@@ -195,6 +195,7 @@ function loseLives(player, hazards) {
   livesCounter.setText('Lives Left: ' + lives);
 
   //TO DO: Add an invincibility timer so that lives won't get lost very fast
+
 
   if (lives == 0) {
     this.physics.pause();
