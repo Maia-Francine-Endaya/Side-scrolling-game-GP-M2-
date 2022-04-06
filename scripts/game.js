@@ -38,7 +38,7 @@ var win;
 var gameOver;
 
 function preload() {
-  this.load.image('background', './assets/images/Background-Placeholder.PNG');
+  this.load.image('background', './assets/images/Sky.PNG');
   this.load.image('ground', './assets/images/Platform.PNG');
   this.load.image('coin', './assets/images/Coin.PNG');
   this.load.image('goal', './assets/images/Goal.PNG');
@@ -53,7 +53,7 @@ function create() {
 
   //Score
   scoreText = this.add.text(400, 16, 'Score: 0', { fontSize: '32px', fill: '#000' });
-  collectedText = this.add.text(20, 55, 'Coins Collected: 0', { fontSize: '32px,', fill: '#000' });
+  collectedText = this.add.text(18, 65, 'Coins Collected: 0', { fontSize: '32px,', fill: '#000' });
 
   //Lives
   livesCounter = this.add.text(16, 16, 'Lives: 3', { fontSize: '32px', fill: '#000' });
@@ -70,7 +70,6 @@ function create() {
 
   platforms.create(1000, 430, 'ground');
   platforms.create(1400, 510, 'ground');
-  // platforms.create(600, 510, 'ground');
   platforms.create(600, 340, 'ground');
   platforms.create(200, 260, 'ground');
 
@@ -105,7 +104,7 @@ function create() {
   //Coins
   coins = this.physics.add.group({
     key: 'coin',
-    repeat: 10,
+    repeat: 11,
     setXY: { x: 100, y: 0, stepX: 130 }
   });
 
@@ -192,17 +191,14 @@ function winFunction(player, goal) {
 function loseLives(player, hazards) {
 
   lives -= 1;
-  livesCounter.setText('Lives Left: ' + lives);
-
-  //TO DO: Add an invincibility timer so that lives won't get lost very fast
-
+  livesCounter.setText('Lives Left: ' + lives)
 
   if (lives == 0) {
     this.physics.pause();
     player.setTint(0xbd0000);
     player.anims.play('turn');
 
-    gameOverText = this.add.text(600, 300, 'YOU LOST!', { fontSize: '100px', fill: '#000' })
+    gameOverText = this.add.text(600, 300, 'YOU LOSE!', { fontSize: '100px', fill: '#000' })
     gameOver = true;
   }
 }
