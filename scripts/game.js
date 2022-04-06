@@ -104,7 +104,7 @@ function create() {
   //Coins
   coins = this.physics.add.group({
     key: 'coin',
-    repeat: 11,
+    repeat: 13,
     setXY: { x: 100, y: 0, stepX: 130 }
   });
 
@@ -119,13 +119,20 @@ function create() {
   //Hazards
   hazards = this.physics.add.staticGroup();
 
-  hazards.create(300, 568, 'hazard');
-  hazards.create(425, 568, 'hazard');
-  hazards.create(473, 568, 'hazard');
+  hazards.create(620, 590, 'hazard');
+  hazards.create(650, 590, 'hazard');
+  hazards.create(680, 590, 'hazard');
 
-  hazards.create(1630, 568, 'hazard');
-  hazards.create(1680, 568, 'hazard');
-  hazards.create(1730, 568, 'hazard');
+  hazards.create(1420, 590, 'hazard');
+  hazards.create(1450, 590, 'hazard');
+  hazards.create(1480, 590, 'hazard');
+
+  hazards.create(695, 310, 'hazard');
+  hazards.create(560, 310, 'hazard');
+  hazards.create(425, 310, 'hazard');
+
+  hazards.create(290, 230, 'hazard');
+  hazards.create(155, 230, 'hazard');
 
   //Cursors
   cursors = this.input.keyboard.createCursorKeys();
